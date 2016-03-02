@@ -33,14 +33,11 @@ public class MainActivity extends ListActivity {
         Uri uri = ContactsContract.Contacts.CONTENT_URI;
 
         //Retrieves the Contact Cursor
-//        Cursor cursor = getContentResolver().query(uri, null, null, null, null); DEPRECATED
-//        startManagingCursor(cursor);                                             DEPRECATED
-
-        LoaderManager loader = getLoaderManager().initLoader(this.getTaskId(), uri, );
-        startManagingCursor(cursor);
+        Cursor cursor = getContentResolver().query(uri, null, null, null, null); //DEPRECATED
+        startManagingCursor(cursor);                                             //DEPRECATED
 
         //Lists Contact's name
-        String[] columns = new String[] { ContactsContract.Contacts.DISPLAY_NAME };
+        String[] columns = new String[] { ContactsContract.Contacts.DISPLAY_NAME_PRIMARY };
         int[] fields = new int[] { R.id.nome };
 
         //Connects the Adapter to XML
