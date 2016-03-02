@@ -1,0 +1,4 @@
+#To delete all the files already deleted
+git ls-files --deleted -z | xargs -0 git rm
+
+
